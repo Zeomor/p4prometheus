@@ -499,4 +499,10 @@ Please review config files, and adjust as necessary (reloading/restarting servic
     /etc/prometheus/prometheus.yml
     /etc/alertmanager/alertmanager.yml
 
+If you're running CentOS and Grafana is running but unaccessible, check the host firewall configuration and allow port 3000 ( default port for Grafana ):
+    firewall-cmd --list-all
+    firewall-cmd --zone=public --add-port=3000/tcp --permanent
+Reload the host firewall
+    firewall-cmd --reload
+    
 "
